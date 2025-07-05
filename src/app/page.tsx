@@ -9,8 +9,8 @@ type Country = 'UK' | 'Nigeria' | 'Ghana';
 
 interface CountryContent {
   heroImage: string;
-  heroTitle: any;
-  heroDescription: any;
+  heroTitle: string;
+  heroDescription: string;
 
 }
 
@@ -36,7 +36,7 @@ const countryContent: Record<Country, CountryContent> = {
 };
 
 export default function Home() {
-  const [selectedCountry, setSelectedCountry] = useState<Country>('UK');
+  const [, setSelectedCountry] = useState<Country>('UK');
   const [content, setContent] = useState<CountryContent>(countryContent.UK);
 
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function Home() {
       <section className="pb-8 bg-black">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm font-normal mt-5 text-[#EBD67B] leading-1.5">BANKING AT ITS FINEST</p>
-          <h2 className="text-2xl sm:text-3xl font-bold my-5 text-[#EBD67B]">Choose what's right for you</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold my-5 text-[#EBD67B]">Choose what&apos;s right for you</h2>
           <p className="text-sm font-normal mb-6 text-[rgb(235,214,123)]">We help businesses and customers achieve more</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-2">
             <div className="flex flex-col items-center justify-center px-2">
@@ -143,25 +143,25 @@ export default function Home() {
             {[
               {
                 title: "WEALTH MANAGEMENT",
-                description: "At NattyBank, we believe wealth is more than accumulation,it's about protection, growth, and legacy.",
+                description: "At NattyBank, we believe wealth is more than accumulation,it&apos;s about protection, growth, and legacy.",
                 image: "/products1.svg",
                 alt: "Wealth Management"
               },
               {
                 title: "PERSONAL BANKING",
-                description: "At NattyBank, personal banking is more than just managing money, it's about giving you the tools, support, and confidence to thrive financially at every stage of life.",
+                description: "At NattyBank, personal banking is more than just managing money, it&apos;s about giving you the tools, support, and confidence to thrive financially at every stage of life.",
                 image: "/products2.svg",
                 alt: "Personal Banking"
               },
               {
                 title: "MOBILE BANKING",
-                description: "With the NattyBank Mobile App, you can manage your finances on the go whether you're paying bills, sending money, tracking expenses, or applying for a loan. It's fast, secure, and built to keep you in control, 24/7.",
+                description: "With the NattyBank Mobile App, you can manage your finances on the go whether you&apos;re paying bills, sending money, tracking expenses, or applying for a loan. It's fast, secure, and built to keep you in control, 24/7.",
                 image: "/products3.svg",
                 alt: "Mobile Banking"
               },
               {
                 title: "CREDIT CARDS",
-                description: "The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn't listen.",
+                description: "The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn&apos;t listen.",
                 image: "/products3.svg",
                 alt: "Credit Cards"
               }
@@ -371,7 +371,7 @@ export default function Home() {
             <div className="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10">
               <h2 className="text-3xl font-bold mb-6 md:mt-[400px] text-[#d4af37]">Make your money <br />work for you</h2>
               <p className="text-gray-300 mb-6">
-                Manage all your financial needs anytime, anywhere with <br />NattyBank's secure and seamless digital banking tools.
+                Manage all your financial needs anytime, anywhere with <br />NattyBank&apos;s secure and seamless digital banking tools.
               </p>
             </div>
             
