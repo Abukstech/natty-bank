@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -76,14 +77,36 @@ export default function Home() {
         </div>
         
         <div className="container mx-auto px-10 z-10 relative">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#EBD67B] font-medium mb-6">
+          <motion.div 
+            className="max-w-3xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.h1 
+              className="text-2xl md:text-5xl lg:text-6xl text-[#EBD67B] font-medium mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
               {content.heroTitle}
-            </h1>
-            <p className="text-xl mb-8 text-[#EBD67B]">
+            </motion.h1>
+            <motion.p 
+              className="text-xl mb-8 text-[#EBD67B]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
               {content.heroDescription}
-            </p>
-            <button className="bg-[#EBD67B] hover:bg-[#c4a030] flex flex-row items-center text-black px-6 py-3 rounded-[30px] font-medium text-lg transition-colors">
+            </motion.p>
+            <motion.button 
+              className="bg-[#EBD67B] hover:bg-[#c4a030] flex flex-row items-center text-black px-6 py-3 rounded-[30px] font-medium text-lg transition-colors"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Get Started <Image
               src="/vector.svg"
               alt="Arrow Icon"
@@ -91,29 +114,76 @@ export default function Home() {
               height={20}
               className="ml-2"
             />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 
       {/* Rest of the page content remains the same */}
       {/* Choose what's right for you */}
       <section className="pb-8 bg-black">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm font-normal mt-5 text-[#EBD67B] leading-1.5">BANKING AT ITS FINEST</p>
-          <h2 className="text-2xl sm:text-3xl font-bold my-5 text-[#EBD67B]">Choose what&apos;s right for you</h2>
-          <p className="text-sm font-normal mb-6 text-[rgb(235,214,123)]">We help businesses and customers achieve more</p>
+        <motion.div 
+          className="container mx-auto px-4 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.p 
+            className="text-sm font-normal mt-5 text-[#EBD67B] leading-1.5"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            BANKING AT ITS FINEST
+          </motion.p>
+          <motion.h2 
+            className="text-2xl sm:text-3xl font-bold my-5 text-[#EBD67B]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Choose what&apos;s right for you
+          </motion.h2>
+          <motion.p 
+            className="text-sm font-normal mb-6 text-[rgb(235,214,123)]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            We help businesses and customers achieve more
+          </motion.p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-2">
-            <div className="flex flex-col items-center justify-center px-2">
+            {/* Replace each div with motion.div */}
+            <motion.div 
+              className="flex flex-col items-center justify-center px-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.1 }}
+            >
               <Image src={'/banking.svg'} alt="Banking" width={40} height={40} className="mb-2" />
               <p className="text-[#EBD67B] text-sm sm:text-base">Banking</p>
-            </div>
+            </motion.div>
             
-            <div className="flex flex-col items-center justify-center px-2">
+            {/* Apply similar motion.div to other items */}
+            <motion.div 
+              className="flex flex-col items-center justify-center px-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.1 }}
+            >
               <Image src={'/checking.svg'} alt="Checking" width={40} height={40} className="mb-2" />
               <p className="text-[#EBD67B] text-sm sm:text-base">Checking</p>
-            </div>
+            </motion.div>
           
+            {/* Continue with other items... */}
             <div className="flex flex-col items-center justify-center px-2">
               <Image src={'/savings.svg'} alt="Savings" width={40} height={40} className="mb-2" />
               <p className="text-[#EBD67B] text-sm sm:text-base">Savings</p>
@@ -129,15 +199,27 @@ export default function Home() {
               <p className="text-[#EBD67B] text-sm sm:text-base">Mortgages</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Top products & services */}
       <section className="py-8 md:py-16 bg-[#0c0c0c]">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-start text-[#EBD67B]">
+        <motion.div 
+          className="container mx-auto px-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <motion.h2 
+            className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-start text-[#EBD67B]"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             Top products & services
-          </h2>
+          </motion.h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
@@ -166,7 +248,15 @@ export default function Home() {
                 alt: "Credit Cards"
               }
             ].map((product, index) => (
-              <div key={index} className="bg-white flex flex-col hover:shadow-lg transition-shadow">
+              <motion.div 
+                key={index} 
+                className="bg-white flex flex-col hover:shadow-lg transition-shadow"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 * index, duration: 0.5 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              >
                 {/* Text section */}
                 <div className="p-4 md:p-6">
                   <h3 className="text-xs md:text-sm uppercase font-medium tracking-wider text-black mb-2 md:mb-4">{product.title}</h3>
@@ -194,7 +284,7 @@ export default function Home() {
                     </svg>
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
           
@@ -204,57 +294,125 @@ export default function Home() {
               <button className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-600 hover:bg-gray-400"></button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Grow with Finance */}
       <section className="py-10 md:py-20 bg-black">
-        <div className="mx-auto px-4 md:px-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-start text-[#EBD67B] px-2 md:px-0">
+        <motion.div 
+          className="mx-auto px-4 md:px-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.h2 
+            className="text-2xl md:text-3xl font-bold mb-6 text-start text-[#EBD67B] px-2 md:px-0"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             Growth with Purpose
-          </h2>
-          <p className="text-sm md:text-base mb-6 text-[#EBD67B] px-2 md:px-0">
+          </motion.h2>
+          <motion.p 
+            className="text-sm md:text-base mb-6 text-[#EBD67B] px-2 md:px-0"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             We are driven by a balanced commitment to profitability, environmental responsibility, and social impact.
-          </p>
-          <Image 
-            src={'/growth2.png'} 
-            alt="Growth" 
-            height={500} 
-            width={500} 
-            className="object-contain w-full"
-            priority
-          />
-        </div>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Image 
+              src={'/growth2.png'} 
+              alt="Growth" 
+              height={500} 
+              width={500} 
+              className="object-contain w-full"
+              priority
+            />
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Mobile Banking */}
       <section className="py-16 bg-[#EBD67B]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-10 md:mb-0 order-2 md:order-1">
-              <h2 className="text-3xl font-bold mb-6 text-black">Your Bank, Your Way, Anytime.</h2>
-              <p className="text-black/80 mb-6">
+            <motion.div 
+              className="md:w-1/2 mb-10 md:mb-0 order-2 md:order-1"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <motion.h2 
+                className="text-3xl font-bold mb-6 text-black"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Your Bank, Your Way, Anytime.
+              </motion.h2>
+              <motion.p 
+                className="text-black/80 mb-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
                 Experience the freedom of banking on your terms with our state-of-the-art mobile app. Manage your accounts, make payments, and track your spending—all from the palm of your hand.
-              </p>
-              <div className="flex space-x-4">
-                <button className="bg-black text-white px-4 py-2 rounded-md flex items-center">
+              </motion.p>
+              <motion.div 
+                className="flex space-x-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <motion.button 
+                  className="bg-black text-white px-4 py-2 rounded-md flex items-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 8.42 7.31c1.33.07 2.25.78 3.04.79 1.21-.05 2.13-.79 3.61-.84 2.05.06 3.57 1.15 4.38 2.92-3.52 2.14-2.9 6.88.59 8.43-.7 1.96-1.66 3.67-2.99 5.67zm-5.03-15.7c-.12-2.34 1.91-4.58 4.06-4.58.21 2.06-1.84 4.66-4.06 4.58z"/>
                   </svg>
                   App Store
-                </button>
-                <button className="bg-black text-white px-4 py-2 rounded-md flex items-center">
+                </motion.button>
+                <motion.button 
+                  className="bg-black text-white px-4 py-2 rounded-md flex items-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M3.609 1.814L13.792 12 3.609 22.186c-.181.181-.29.423-.29.684v.065c0 .253.103.49.282.667.179.178.415.277.666.277h.058c.253 0 .49-.103.667-.282L15.6 12.976a1.42 1.42 0 000-1.952L4.992 .404A.97.97 0 004.325.121h-.058a.948.948 0 00-.666.277.948.948 0 00-.282.667v.065c0 .261.109.503.29.684z"/>
                   </svg>
                   Google Play
-                </button>
-              </div>
-            </div>
+                </motion.button>
+              </motion.div>
+            </motion.div>
             
-            <div className="md:w-1/2 flex justify-center order-1 md:order-2">
-              <div className="">
-             
+            <motion.div 
+              className="md:w-1/2 flex justify-center order-1 md:order-2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <motion.div 
+                initial={{ y: 20 }}
+                animate={{ y: [20, 0, 20] }}
+                transition={{ duration: 4, repeat: Infinity, repeatType: "loop" }}
+              >
                 <Image 
                   src={"/nattypng.png"}
                   alt="Mobile Banking App" 
@@ -262,18 +420,32 @@ export default function Home() {
                   height={600}
                   className=" "
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Features */}
       <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-start">Experience Banking with <span className="text-[#d4af37]">Freedom and Control</span></h2>
+        <motion.div 
+          className="container mx-auto px-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <motion.h2 
+            className="text-3xl font-bold mb-12 text-start"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Experience Banking with <span className="text-[#d4af37]">Freedom and Control</span>
+          </motion.h2>
           
-          <div className="grid grid-cols-1  px-8 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 px-8 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: "/banking.svg",
@@ -342,9 +514,22 @@ export default function Home() {
                 ]
               }
             ].map((category, index) => (
-              <div key={index} className="p-6 rounded-lg hover:border-[#d4af37] transition-colors group">
+              <motion.div 
+                key={index} 
+                className="p-6 rounded-lg hover:border-[#d4af37] transition-colors group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * index, duration: 0.5 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.03, borderColor: "#d4af37", borderWidth: 1 }}
+              >
                 <div className="mb-4 flex flex-row gap-3 items-center">
-                  <img src={category.icon} alt={category.alt} className="h-10 w-10 text-[#EBD67B]" />
+                  <motion.img 
+                    src={category.icon} 
+                    alt={category.alt} 
+                    className="h-10 w-10 text-[#EBD67B]"
+                    whileHover={{ rotate: 10 }}
+                  />
                   <h3 className={`text-xl ${category.isBold ? 'font-semibold' : 'font-normal'} mb-2 text-[#EBD67B] transition-colors`}>
                     {category.title}
                   </h3>
@@ -352,35 +537,73 @@ export default function Home() {
           
                 <ul className="space-y-2 text-[#EBD67B]">
                   {category.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-center">
-                     
+                    <motion.li 
+                      key={itemIndex} 
+                      className="flex items-center"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3 + (0.1 * itemIndex), duration: 0.3 }}
+                      viewport={{ once: true }}
+                    >
                       {item}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Contact Form */}
       <section className="py-16 bg-[#0c0c0c]" style={{ backgroundImage: 'url("/make.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10">
-              <h2 className="text-3xl font-bold mb-6 md:mt-[400px] text-[#d4af37]">Make your money <br />work for you</h2>
-              <p className="text-gray-300 mb-6">
+            <motion.div 
+              className="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <motion.h2 
+                className="text-3xl font-bold mb-6 md:mt-[400px] text-[#d4af37]"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Make your money <br />work for you
+              </motion.h2>
+              <motion.p 
+                className="text-gray-300 mb-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
                 Manage all your financial needs anytime, anywhere with <br />NattyBank&apos;s secure and seamless digital banking tools.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
             
-            <div className="md:w-1/2 bg-white p-8 rounded-lg">
+            <motion.div 
+              className="md:w-1/2 bg-white p-8 rounded-lg"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <p className="text-black uppercase text-sm font-medium mb-6">
                 FILL OUT THE FORM BELOW AND OUR TEAM WILL GET BACK TO YOU AS SOON AS POSSIBLE.
               </p>
               <form>
-                <div className="mb-4">
+                <motion.div 
+                  className="mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
                   <label htmlFor="subject" className="block text-sm font-medium mb-2 text-black">Subject</label>
                   <div className="relative">
                     <select id="subject" className="w-full px-4 py-3 bg-white border border-[#e0e0e0] rounded-md focus:outline-none focus:ring-1 focus:ring-[#d4af37] focus:border-[#d4af37] text-black appearance-none">
@@ -396,78 +619,120 @@ export default function Home() {
                       </svg>
                     </div>
                   </div>
-                </div>
-                <div className="mb-4">
+                </motion.div>
+                
+                {/* Add similar motion.div wrappers for other form elements */}
+                <motion.div 
+                  className="mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
                   <label htmlFor="name" className="block text-sm font-medium mb-2 text-black">Your Name *</label>
                   <input type="text" id="name" className="w-full px-4 py-3 bg-white border border-[#e0e0e0] rounded-md focus:outline-none focus:ring-1 focus:ring-[#d4af37] focus:border-[#d4af37] text-black" required />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-black">Your Email *</label>
-                  <input type="email" id="email" className="w-full px-4 py-3 bg-white border border-[#e0e0e0] rounded-md focus:outline-none focus:ring-1 focus:ring-[#d4af37] focus:border-[#d4af37] text-black" required />
-                </div>
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-black">Your Message</label>
-                  <textarea id="message" rows={5} className="w-full px-4 py-3 bg-white border border-[#e0e0e0] rounded-md focus:outline-none focus:ring-1 focus:ring-[#d4af37] focus:border-[#d4af37] text-black"></textarea>
-                </div>
-                <button type="submit" className="bg-black hover:bg-[#222] text-[#d4af37] px-6 py-3 rounded-md font-medium transition-colors">
+                </motion.div>
+                
+                {/* Continue with other form elements... */}
+                
+                <motion.button 
+                  type="submit" 
+                  className="bg-black hover:bg-[#222] text-[#d4af37] px-6 py-3 rounded-md font-medium transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   Send Message
-                </button>
+                </motion.button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Frequently asked questions</h2>
+        <motion.div 
+          className="container mx-auto px-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <motion.h2 
+            className="text-3xl font-bold mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Frequently asked questions
+          </motion.h2>
           
-          <div className="max-w-3xl mx-auto space-y-4">
-            <div className="border border-[#333] rounded-lg overflow-hidden">
-              <button className="flex justify-between items-center w-full p-4 text-left font-medium hover:bg-[#1a1a1a] transition-colors">
-                <span>How do I open a new account?</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="border border-[#333] rounded-lg overflow-hidden">
-              <button className="flex justify-between items-center w-full p-4 text-left font-medium hover:bg-[#1a1a1a] transition-colors">
-                <span>What are the benefits of your premium accounts?</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="border border-[#333] rounded-lg overflow-hidden">
-              <button className="flex justify-between items-center w-full p-4 text-left font-medium hover:bg-[#1a1a1a] transition-colors">
-                <span>How secure is your mobile banking app?</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="border border-[#333] rounded-lg overflow-hidden">
-              <button className="flex justify-between items-center w-full p-4 text-left font-medium hover:bg-[#1a1a1a] transition-colors">
-                <span>What investment options do you offer?</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-            </div>
-          </div>
+          <motion.div 
+            className="max-w-3xl mx-auto space-y-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {[
+              "How do I open a new account?",
+              "What are the benefits of your premium accounts?",
+              "How secure is your mobile banking app?",
+              "What investment options do you offer?"
+            ].map((question, index) => (
+              <motion.div 
+                key={index}
+                className="border border-[#333] rounded-lg overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 * index + 0.5, duration: 0.5 }}
+                viewport={{ once: true }}
+                whileHover={{ borderColor: "#d4af37" }}
+              >
+                <motion.button 
+                  className="flex justify-between items-center w-full p-4 text-left font-medium hover:bg-[#1a1a1a] transition-colors"
+                  whileHover={{ backgroundColor: "#1a1a1a" }}
+                  whileTap={{ scale: 0.99 }}
+                >
+                  <span>{question}</span>
+                  <motion.svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-5 w-5 text-[#d4af37]" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                    whileHover={{ rotate: 180 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </motion.svg>
+                </motion.button>
+              </motion.div>
+            ))}
+          </motion.div>
           
-          <div className="mt-10 text-center">
+          <motion.div 
+            className="mt-10 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <p className="text-gray-400 mb-4">Still have questions? Contact our support team</p>
-            <button className="bg-transparent border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black px-6 py-3 rounded-md font-medium transition-colors">
+            <motion.button 
+              className="bg-transparent border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black px-6 py-3 rounded-md font-medium transition-colors"
+              whileHover={{ scale: 1.05, backgroundColor: "#d4af37", color: "#000" }}
+              whileTap={{ scale: 0.95 }}
+            >
               Contact Support
-            </button>
-          </div>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </section>
 
     

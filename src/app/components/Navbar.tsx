@@ -62,7 +62,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-black border-b border-gray-800">
+    <nav className="fixed w-full z-50 bg-black border-b border-[#EBD67B]">
       {/* Top navigation bar - hidden on mobile */}
       <div className="hidden md:flex container mx-auto px-4 md:px-10 py-1 justify-between items-center text-xs">
         <div className="flex space-x-6">
@@ -99,10 +99,10 @@ const Navbar = () => {
             <Link href="/" className="text-[#EBD67B] transition-colors">
               Home
             </Link>
-            <Link href="/services" className="text-[#EBD67B] transition-colors">
+            <Link href="/service" className="text-[#EBD67B] transition-colors">
               Services
             </Link>
-            <Link href="/contacts" className="text-[#EBD67B] transition-colors">
+            <Link href="/contact" className="text-[#EBD67B] transition-colors">
               Contacts
             </Link>
           </div>

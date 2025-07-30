@@ -19,7 +19,7 @@ const Footer = () => {
             {/* Column 1 - Logo and Info */}
             <div>
               <div className="flex items-center mb-6">
-                <img src="/nattypng.png" alt="Natty Bank" className="h-10 w-10 mr-2" />
+                <img src="/nattylogo.svg" alt="Natty Bank" className="h-10 w-10 mr-2" />
                 <span className="text-xl font-bold">NattyBank</span>
               </div>
               <p className="text-gray-400 mb-6">We are a bank. A fully-fledged, bona fide bank. A business bank created and backed by business people.</p>
