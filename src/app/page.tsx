@@ -66,9 +66,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white md:pt-20 pt-48">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20">
+      <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0 z-0">
           <div className="relative h-full w-full">
             {/* Using the country-specific hero image */}
@@ -84,6 +84,15 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+
+               <motion.h1 
+              className="text-xl md:text-3xl lg:text-6xl text-[#EBD67B] font-medium mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+       WELCOME TO NATTYBANK
+            </motion.h1>
             <motion.h1 
               className="text-2xl md:text-5xl lg:text-6xl text-[#EBD67B] font-medium mb-6"
               initial={{ opacity: 0 }}
@@ -93,7 +102,7 @@ export default function Home() {
               {content.heroTitle}
             </motion.h1>
             <motion.p 
-              className="text-xl mb-8 text-[#EBD67B]"
+              className="md:text-xl text-lg  mb-8 text-[#EBD67B]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -582,7 +591,7 @@ export default function Home() {
             </motion.div>
             
             <motion.div 
-              className="md:w-1/2 bg-white p-8 rounded-lg"
+              className="md:w-1/2 bg-[#D9D9D9] p-8 rounded-lg"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}

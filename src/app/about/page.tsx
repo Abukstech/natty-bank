@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <main className="min-h-screen bg-black text-white pt-20">
+    <main className="min-h-screen bg-black text-white pt-48 md:pt-0">
       {/* Hero Section - You'll import the image */}
       <section className="relative min-h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
@@ -42,7 +42,7 @@ export default function AboutUs() {
       <section className="py-12 md:py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 px-0">
               <Image 
                 src="/product1.png" 
                 alt="Our Mission" 
@@ -65,7 +65,7 @@ export default function AboutUs() {
       </section>
 
       {/* Our Vision Section */}
-      <section className="py-12 md:py-16 bg-[#0c0c0c]">
+      <section className="py-12 md:py-16 bg-[#0c0c0c] ">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2 order-2 md:order-1">

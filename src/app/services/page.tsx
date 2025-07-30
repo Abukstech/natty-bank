@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <main className="min-h-screen bg-black text-white pt-20 px-16">
+    <main className="min-h-screen bg-black text-white pt-20 md:px-16">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 md:mt-20">
         <div className="absolute inset-0 z-0 overflow-hidden">

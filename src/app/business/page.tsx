@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export default function BusinessBanking() {
   return (
-    <main className="min-h-screen bg-black text-white pt-20">
+    <main className="min-h-screen bg-black text-white md:pt-20 pt-48 ">
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-black">
-        <div className="container mx-auto ">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/3 pr-0 md:pr-8">
+        <div className=" ">
+          <div className="flex flex-col-reverse md:flex-row items-center gap-8">
+            <div className="md:w-1/3 px-6 md:pr-8">
               <h1 className="text-3xl sm:text-4xl md:text-5xl text-[#EBD67B] font-medium mb-6">
                 Business<br />Banking
               </h1>
@@ -27,7 +27,7 @@ export default function BusinessBanking() {
                 alt="Business Banking" 
                 width={1200} 
                 height={900}
-                className="rounded-lg w-full h-auto"
+                className=" w-full h-auto"
               />
             </div>
           </div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { UKFlag, NigeriaFlag, GhanaFlag } from './Flags';
+import { Search, Menu } from 'lucide-react';
 
 // Define country type and content data
 type Country = 'UK' | 'Nigeria' | 'Ghana';
@@ -62,11 +63,50 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-black border-b border-[#EBD67B]">
+    <nav className="fixed w-full  z-50 bg-black border-b pt-16 md:pt-0 border-[#EBD67B]">
       {/* Top navigation bar - hidden on mobile */}
+      <div className="md:hidden relative">
+        <button 
+          onClick={toggleDropdown}
+          className="text-end w-full mr-10 text-[#EBD67B] text-[11px] flex justify-end items-center"
+        >
+          {selectedCountry === 'UK' ? 'United kingdom' : selectedCountry}
+          <span className="ml-1 inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </button>
+        
+        {isDropdownOpen && (
+          <div className="absolute right-10 mt-1 w-32 bg-black border border-gray-800 rounded-md shadow-lg z-50">
+            <button 
+              onClick={() => selectCountry('UK')} 
+              className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
+            >
+              {/* <span className="mr-2"><UKFlag /></span> */}
+              <span>United Kingdom</span>
+            </button>
+            <button 
+              onClick={() => selectCountry('Nigeria')} 
+              className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
+            >
+              {/* <span className="mr-2"><NigeriaFlag /></span> */}
+              <span>Nigeria</span>
+            </button>
+            <button 
+              onClick={() => selectCountry('Ghana')} 
+              className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
+            >
+              {/* <span className="mr-2"><GhanaFlag /></span> */}
+              <span>Ghana</span>
+            </button>
+          </div>
+        )}
+      </div>
       <div className="hidden md:flex container mx-auto px-4 md:px-10 py-1 justify-between items-center text-xs">
         <div className="flex space-x-6">
-          <Link href="/private" className="text-[#EBD67B] transition-colors">
+          <Link href="/personal" className="text-[#EBD67B] transition-colors">
             For private customers
           </Link>
           <Link href="/business" className="text-[#EBD67B] transition-colors">
@@ -88,14 +128,14 @@ const Navbar = () => {
       </div>
       
       {/* Main navigation bar */}
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center border-t border-gray-800">
-        <div className="flex items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Desktop view */}
+        <div className="hidden md:flex items-center">
           <Link href="/" className="flex items-center">
             <Image src="/nattylogo.svg" alt="Natty Bank" width={50} height={50} className="mr-2" />
           </Link>
           
-          {/* Desktop navigation links */}
-          <div className="hidden md:flex md:space-x-6 ml-8">
+          <div className="md:flex md:space-x-6 ml-8">
             <Link href="/" className="text-[#EBD67B] transition-colors">
               Home
             </Link>
@@ -108,7 +148,27 @@ const Navbar = () => {
           </div>
         </div>
         
-        <div className="flex items-center space-x-4">
+        {/* Mobile view */}
+
+        <div className="md:hidden sticky flex items-center">
+      
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/nattylogo.svg" 
+              alt="Natty Bank" 
+              width={40} 
+              height={40} 
+              className="mr-1" 
+            />
+            <div className="flex flex-col">
+              <span className="text-[#EBD67B] text-xl font-bold">Natty Bank</span>
+        
+            </div>
+          </Link>
+        </div>
+        
+        {/* Desktop right side */}
+        <div className="hidden md:flex items-center space-x-4">
           {/* Flag dropdown */}
           <div className="relative">
             <button 
@@ -146,23 +206,69 @@ const Navbar = () => {
             )}
           </div>
           
-          {/* Mobile menu button */}
-          <button 
-            onClick={toggleMobileMenu} 
-            className="md:hidden text-[#EBD67B] p-2"
-            aria-label="Toggle mobile menu"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-          
-          {/* Online Banking button - hidden on smallest screens */}
-          <button className="hidden sm:flex border border-[#d4af37] text-[#EBD67B] hover:bg-[#d4af37] hover:text-black px-4 py-2 rounded-sm font-medium transition-colors items-center">
+          {/* Online Banking button */}
+          <button className="border border-[#d4af37] text-[#EBD67B] hover:bg-[#d4af37] hover:text-black px-4 py-2 rounded-sm font-medium transition-colors items-center flex">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
             Online Banking
+          </button>
+        </div>
+        
+        {/* Mobile right side */}
+        <div className="md:hidden flex items-center space-x-3">
+          {/* Country selector */}
+          {/* <div className="relative">
+            <button 
+              onClick={toggleDropdown}
+              className="flex items-center justify-center rounded-full overflow-hidden w-8 h-8 border border-gray-700 hover:border-[#d4af37] transition-colors"
+              aria-label="Select country"
+            >
+              {renderSelectedFlag()}
+            </button>
+            
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-32 bg-black border border-gray-800 rounded-md shadow-lg z-50">
+                <button 
+                  onClick={() => selectCountry('UK')} 
+                  className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
+                >
+                  <span className="mr-2"><UKFlag /></span>
+                  <span>United Kingdom</span>
+                </button>
+                <button 
+                  onClick={() => selectCountry('Nigeria')} 
+                  className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
+                >
+                  <span className="mr-2"><NigeriaFlag /></span>
+                  <span>Nigeria</span>
+                </button>
+                <button 
+                  onClick={() => selectCountry('Ghana')} 
+                  className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
+                >
+                  <span className="mr-2"><GhanaFlag /></span>
+                  <span>Ghana</span>
+                </button>
+              </div>
+            )}
+          </div> */}
+          
+          {/* Search icon */}
+          <button 
+            className="text-[#EBD67B] p-2"
+            aria-label="Search"
+          >
+            <Search size={24} className="text-[#EBD67B]" />
+          </button>
+          
+          {/* Mobile menu button */}
+          <button 
+            onClick={toggleMobileMenu} 
+            className="text-[#EBD67B] p-2 bg-[#EBD67B] flex items-center justify-center"
+            aria-label="Toggle mobile menu"
+          >
+            <Menu size={24} className="text-black" />
           </button>
         </div>
       </div>
@@ -195,16 +301,23 @@ const Navbar = () => {
                   Transfers and payments
                 </Link>
               </div>
-              <button className="w-full border border-[#d4af37] text-[#EBD67B] hover:bg-[#d4af37] hover:text-black px-4 py-2 rounded-sm font-medium transition-colors flex items-center justify-center mt-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                Online Banking
-              </button>
+              
             </div>
           </div>
         </div>
       )}
+      
+      {/* Online Banking button for mobile - right after the navbar */}
+      <div className="md:hidden w-full bg-black ">
+        <div className="container mx-auto px-4 py-4">
+          <button className="w-full flex items-center justify-center bg-transparent border border-[#EBD67B] rounded-sm py-3 px-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#EBD67B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            <span className="text-[#EBD67B] font-medium">Online Banking</span>
+          </button>
+        </div>
+      </div>
     </nav>
   );
 };

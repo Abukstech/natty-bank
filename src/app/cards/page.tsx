@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CreditCards() {
   return (
-    <main className="min-h-screen bg-black text-white pt-20">
+    <main className="min-h-screen bg-black text-white pt-40">
       {/* Breadcrumb Navigation */}
       <div className="container mx-auto px-4 py-4 text-sm">
         <div className="flex items-center space-x-2 text-[#EBD67B]">
@@ -19,7 +19,7 @@ export default function CreditCards() {
       <section className="py-8 md:py-16">
         <div className="container mx-auto ">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+            <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8 px-4">
               <h1 className="text-4xl md:text-5xl font-bold text-[#EBD67B] mb-6">Credit Cards</h1>
               <p className="text-lg mb-6">
                 The Rio Combo added her list to do so, because there was thousands of that Combo, and Question Marks and Exclamation Marks ran down the street.
