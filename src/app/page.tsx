@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { ArrowRight } from 'lucide-react';
 
 // Define country-specific content
 type Country = 'UK' | 'Nigeria' | 'Ghana';
@@ -107,13 +108,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Get Started <Image
-              src="/vector.svg"
-              alt="Arrow Icon"
-              width={20}
-              height={20}
-              className="ml-2"
-            />
+              Get Started <ArrowRight className="ml-2 w-5 h-5" />
             </motion.button>
           </motion.div>
         </div>
