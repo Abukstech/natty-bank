@@ -11,6 +11,28 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: {
+        parserOptions: {
+          project: "./tsconfig.json",
+          ecmaVersion: 2020,
+          sourceType: "module",
+          ecmaFeatures: {
+            jsx: true
+          }
+        }
+      }
+    },
+    rules: {
+      "@typescript-eslint/no-unused-vars": ["error"],
+      "@typescript-eslint/explicit-function-return-type": ["warn"],
+      "@typescript-eslint/no-explicit-any": ["warn"],
+      "@typescript-eslint/no-inferrable-types": ["warn"],
+      "@typescript-eslint/no-empty-interface": ["warn"]
+    }
+  }
 ];
 
 export default eslintConfig;
