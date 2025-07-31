@@ -58,7 +58,7 @@ const Footer = () => {
             </div>
             
             {/* Footer Sections */}
-            <div className="grid grid-cols-2 gap-y-8 gap-x-4 mb-8">
+            <div className="grid grid-cols-2 gap-y-8 gap-x-6 mb-8">
               {/* Explore NattyBank */}
               <div>
                 <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Explore NattyBank</h4>

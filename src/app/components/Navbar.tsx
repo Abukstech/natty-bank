@@ -152,18 +152,18 @@ const Navbar = () => {
         
         {/* Mobile view */}
 
-        <div className="md:hidden sticky flex items-center">
+        <div className="md:hidden sticky flex items-center gap-0">
       
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-0">
             <Image 
               src="/nattylogo.svg" 
               alt="Natty Bank" 
-              width={40} 
-              height={40} 
-              className="mr-1" 
+              width={60} 
+              height={60} 
+              className="" 
             />
             <div className="flex flex-col">
-              <span className="text-[#EBD67B] text-xl font-bold">Natty Bank</span>
+              <span className="text-[#EBD67B] text-xl font-semibold">NATTYBANK</span>
         
             </div>
           </Link>
