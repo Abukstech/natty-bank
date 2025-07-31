@@ -65,7 +65,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full  z-50 bg-black border-b pt-16 md:pt-0 border-[#EBD67B]">
+    <nav className="fixed w-full  z-50 bg-black border-b pt-8 md:pt-0 border-[#EBD67B]">
       {/* Top navigation bar - hidden on mobile */}
       <div className="md:hidden relative">
         <button 
@@ -280,26 +280,26 @@ const Navbar = () => {
         <div className="md:hidden bg-black border-t border-gray-800 py-4">
           <div className="container mx-auto px-4">
             <div className="flex flex-col space-y-4">
-              <Link href="/" className="text-[#EBD67B] py-2 transition-colors">
+              <Link href="/" className="text-[#EBD67B] py-2 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                 Home
               </Link>
-              <Link href="/services" className="text-[#EBD67B] py-2 transition-colors">
+              <Link href="/services" className="text-[#EBD67B] py-2 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                 Services
               </Link>
-              <Link href="/contact" className="text-[#EBD67B] py-2 transition-colors">
+              <Link href="/contact" className="text-[#EBD67B] py-2 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                 Contacts
               </Link>
               <div className="pt-2 border-t border-gray-800">
-                <Link href="/personal" className="text-[#EBD67B] py-2 block transition-colors">
+                <Link href="/personal" className="text-[#EBD67B] py-2 block transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                   For private customers
                 </Link>
-                <Link href="/business" className="text-[#EBD67B] py-2 block transition-colors">
+                <Link href="/business" className="text-[#EBD67B] py-2 block transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                   For business
                 </Link>
-                <Link href="/commercial" className="text-[#EBD67B] py-2 block transition-colors">
+                <Link href="/commercial" className="text-[#EBD67B] py-2 block transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                   Corporate clients
                 </Link>
-                <Link href="/coming-soon?feature=Transfers" className="text-[#EBD67B] py-2 block transition-colors">
+                <Link href="/coming-soon?feature=Transfers" className="text-[#EBD67B] py-2 block transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                   Transfers and payments
                 </Link>
               </div>

@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-y-8 gap-x-4 mb-8">
               {/* Explore NattyBank */}
               <div>
-                <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Explore NattyBank</h4>
+                <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Explore NattyBank</h4>
                 <ul className="space-y-3 text-gray-400">
                   <li><Link href="/about" className="hover:text-[#EBD67B]">About Us</Link></li>
                <li><Link href="/coming-soon?feature=career" className="hover:text-[#EBD67B]">Careers</Link></li>
@@ -72,7 +72,7 @@ const Footer = () => {
               
               {/* Card Services */}
               <div>
-                <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Card Services</h4>
+                <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Card Services</h4>
                 <ul className="space-y-3 text-gray-400">
 <li><Link href="/cards?type=credit" className="hover:text-[#EBD67B]">Credit Cards</Link></li>
                   <li><Link href="/cards?type=debit" className="hover:text-[#EBD67B]">Debit Cards</Link></li>
@@ -82,7 +82,7 @@ const Footer = () => {
               
               {/* Banking Services */}
               <div>
-                <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Banking Services</h4>
+                <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Banking Services</h4>
                 <ul className="space-y-3 text-gray-400">
                 <li><Link href="/personal" className="hover:text-[#EBD67B]">Personal Banking</Link></li>
                 <li><Link href="/business" className="hover:text-[#EBD67B]">Business Banking</Link></li>
@@ -103,7 +103,7 @@ const Footer = () => {
               
               {/* Customer Support */}
               <div>
-                <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Customer Support</h4>
+                <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Customer Support</h4>
                 <ul className="space-y-3 text-gray-400">
                   <li><Link href="/contact" className="hover:text-[#EBD67B]">Contact Us</Link></li>
                   <li><Link href="/coming-soon?feature=privacy-policy" className="hover:text-[#EBD67B]">Privacy Policy</Link></li>
@@ -115,7 +115,7 @@ const Footer = () => {
             
             {/* Contact */}
             <div className="mb-8">
-              <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Contact</h4>
+              <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Contact</h4>
               <p className="text-gray-400 mb-2">Corporate Headquarters: Unit F, Winston Business Park, Churchill Way #34369, Sheffield, South Yorkshire ,S35 2PS.</p>
               <p className="text-gray-400 mb-2">+44 7441 428182</p>
               <p className="text-gray-400">support@nattybank.com</p>
