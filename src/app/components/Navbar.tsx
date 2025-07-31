@@ -161,7 +161,7 @@ const Navbar = () => {
               alt="Natty Bank" 
               width={60} 
               height={60} 
-              className="" 
+              className="ml-[-20px]" 
             />
             <div className="flex flex-col">
               <span className="text-[#EBD67B] text-xl font-semibold">NATTYBANK</span>
@@ -268,7 +268,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button 
             onClick={toggleMobileMenu} 
-            className="text-[#EBD67B] p-2 bg-[#EBD67B] flex items-center justify-center"
+            className="text-[#EBD67B] p-2 mr-[-14px] bg-[#EBD67B] flex items-center justify-center"
             aria-label="Toggle mobile menu"
           >
             <Menu size={24} className="text-black" />
