@@ -112,7 +112,7 @@ const Navbar = () => {
           <Link href="/business" className="text-[#EBD67B] transition-colors">
             For business
           </Link>
-          <Link href="/corporate" className="text-[#EBD67B] transition-colors">
+          <Link href="/commercial" className="text-[#EBD67B] transition-colors">
             Corporate clients
           </Link>
         </div>
@@ -139,7 +139,7 @@ const Navbar = () => {
             <Link href="/" className="text-[#EBD67B] transition-colors">
               Home
             </Link>
-            <Link href="/service" className="text-[#EBD67B] transition-colors">
+            <Link href="/services" className="text-[#EBD67B] transition-colors">
               Services
             </Link>
             <Link href="/contact" className="text-[#EBD67B] transition-colors">
@@ -284,17 +284,17 @@ const Navbar = () => {
               <Link href="/services" className="text-[#EBD67B] py-2 transition-colors">
                 Services
               </Link>
-              <Link href="/contacts" className="text-[#EBD67B] py-2 transition-colors">
+              <Link href="/contact" className="text-[#EBD67B] py-2 transition-colors">
                 Contacts
               </Link>
               <div className="pt-2 border-t border-gray-800">
-                <Link href="/private" className="text-[#EBD67B] py-2 block transition-colors">
+                <Link href="/personal" className="text-[#EBD67B] py-2 block transition-colors">
                   For private customers
                 </Link>
                 <Link href="/business" className="text-[#EBD67B] py-2 block transition-colors">
                   For business
                 </Link>
-                <Link href="/corporate" className="text-[#EBD67B] py-2 block transition-colors">
+                <Link href="/commercial" className="text-[#EBD67B] py-2 block transition-colors">
                   Corporate clients
                 </Link>
                 <Link href="/transfers" className="text-[#EBD67B] py-2 block transition-colors">

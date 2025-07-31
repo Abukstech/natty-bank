@@ -36,7 +36,8 @@ export default function PersonalBanking() {
                 <Image 
                   src="/personal.svg" 
                   alt="Person using mobile banking" 
-                  fill
+                 width={1200}
+                 height={600}
                   className="object-cover rounded-lg"
                 />
               </div>
@@ -114,7 +115,8 @@ export default function PersonalBanking() {
                 <Image 
                   src="/product1.png" 
                   alt="Modern banking building" 
-                  fill
+                  width={800}
+                  height={400}
                   className="object-cover rounded-lg"
                 />
               </div>
@@ -227,7 +229,8 @@ export default function PersonalBanking() {
                 <Image 
                   src="/product1.png" 
                   alt="Person using mobile banking" 
-                  fill
+                  width={800}
+                  height={400}
                   className="object-cover rounded-lg"
                 />
               </div>

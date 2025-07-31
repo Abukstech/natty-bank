@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CommercialBanking() {
   return (
-    <main className="min-h-screen bg-black text-white pt-20">
+    <main className="min-h-screen bg-black text-white md:pt-24 pt-48 ">
       {/* Breadcrumb Navigation */}
       <div className="container mx-auto px-4 py-4 text-sm">
         <div className="flex items-center space-x-2 text-[#EBD67B]">
@@ -16,7 +16,7 @@ export default function CommercialBanking() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 bg-black pt-48 md:pt-20">
+      <section className="py-16 bg-black ">  
         <div className="container mx-auto px-4">
           <div className="flex flex-col-reverse md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-8">
@@ -32,15 +32,26 @@ export default function CommercialBanking() {
                 Get Started
               </Link>
             </div>
-            <div className="md:w-1/2">
-              <div className="relative h-[400px] w-full">
+            <div className="md:w-1/2 mb-8 md:mb-0">  
+              {/* <div className="relative h-40 md:h-[400px] w-full">  
                 <Image 
                   src="/businessbank.png" 
                   alt="Commercial Banking" 
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-cover rounded-lg" 
+                  priority 
                 />
-              </div>
+              </div> */}
+
+              <div className="md:w-2/3">
+              <Image 
+                src="/businessbank.png" 
+                alt="Business Banking" 
+                width={1200} 
+                height={900}
+                className=" w-full h-auto"
+              />
+            </div>
             </div>
           </div>
         </div>
@@ -55,7 +66,9 @@ export default function CommercialBanking() {
                 <Image 
                   src="/ngnhero.jpg" 
                   alt="Commercial Banking Services" 
-                  fill
+               width={600
+               }
+               height={600}
                   className="object-cover rounded-lg border-2 border-[#1a1a1a]"
                 />
               </div>

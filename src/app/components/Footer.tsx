@@ -109,7 +109,7 @@ const Footer = () => {
             {/* Contact */}
             <div className="mb-8">
               <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Contact</h4>
-              <p className="text-gray-400 mb-2">Corporate Headquarters: 85 Broad Street, New York, NY10004</p>
+              <p className="text-gray-400 mb-2">Corporate Headquarters: Unit F, Winston Business Park, Churchill Way #34369, Sheffield, South Yorkshire ,S35 2PS.</p>
               <p className="text-gray-400 mb-2">+44 7441 428182</p>
               <p className="text-gray-400">support@nattybank.com</p>
             </div>
@@ -152,13 +152,13 @@ const Footer = () => {
             <div>
               <h4 className="text-base font-semibold mb-5 uppercase">Banking Services</h4>
               <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-[#EBD67B]">Personal Banking</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Business Banking</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Commercial Banking</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Checking Accounts</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Wealth Management</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Mobile Banking</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Open an Account</a></li>
+                <li><Link href="/personal" className="hover:text-[#EBD67B]">Personal Banking</Link></li>
+                <li><Link href="/business" className="hover:text-[#EBD67B]">Business Banking</Link></li>
+                <li><Link href="/commercial" className="hover:text-[#EBD67B]">Commercial Banking</Link></li>
+                <li><Link href="/checking" className="hover:text-[#EBD67B]">Checking Accounts</Link></li>
+                <li><Link href="/wealth-management" className="hover:text-[#EBD67B]">Wealth Management</Link></li>
+                <li><Link href="#" className="hover:text-[#EBD67B]">Mobile Banking</Link></li>
+                <li><Link href="#" className="hover:text-[#EBD67B]">Open an Account</Link></li>
               </ul>
             </div>
             
@@ -167,25 +167,25 @@ const Footer = () => {
               <div>
                 <h4 className="text-base font-semibold mb-5 uppercase">Card Services</h4>
                 <ul className="space-y-3 text-gray-400">
-                  <li><a href="#" className="hover:text-[#EBD67B]">Credit Cards</a></li>
-                  <li><a href="#" className="hover:text-[#EBD67B]">Debit Cards</a></li>
-                  <li><a href="#" className="hover:text-[#EBD67B]">Prepaid Cards</a></li>
+                  <li><Link href="#" className="hover:text-[#EBD67B]">Credit Cards</Link></li>
+                  <li><Link href="#" className="hover:text-[#EBD67B]">Debit Cards</Link></li>
+                  <li><Link href="#" className="hover:text-[#EBD67B]">Prepaid Cards</Link></li>
                 </ul>
               </div>
               
               <div>
                 <h4 className="text-base font-semibold mb-5 uppercase">Customer Support</h4>
                 <ul className="space-y-3 text-gray-400">
-                  <li><a href="#" className="hover:text-[#EBD67B]">Contact Us</a></li>
-                  <li><a href="#" className="hover:text-[#EBD67B]">Privacy Policy</a></li>
-                  <li><a href="#" className="hover:text-[#EBD67B]">Report Fraud</a></li>
-                  <li><a href="#" className="hover:text-[#EBD67B]">Help & Live Chat</a></li>
+                  <li><Link href="/contact" className="hover:text-[#EBD67B]">Contact Us</Link></li>
+                  <li><Link href="#" className="hover:text-[#EBD67B]">Privacy Policy</Link></li>
+                  <li><Link href="/fraud-report" className="hover:text-[#EBD67B]">Report Fraud</Link></li>
+                  <li><Link href="#" className="hover:text-[#EBD67B]">Help & Live Chat</Link></li>
                 </ul>
               </div>
 
               <div className="mb-8">
                 <h4 className="text-base font-semibold mb-5 uppercase">Contact</h4>
-                <p className="text-gray-400 mb-2">Corporate Headquarters: 85 Broad Street, New York, NY10004</p>
+                <p className="text-gray-400 mb-2">Corporate Headquarters: Unit F, Winston Business Park, Churchill Way #34369, Sheffield, South Yorkshire ,S35 2PS</p>
                 <p className="text-gray-400 mb-2">+44 7441 428182</p>
                 <p className="text-gray-400">support@nattybank.com</p>
               </div>

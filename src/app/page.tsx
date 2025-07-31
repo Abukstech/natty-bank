@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowRight } from 'lucide-react';
 
 // Define country-specific content
@@ -40,6 +40,7 @@ const countryContent: Record<Country, CountryContent> = {
 export default function Home() {
   const [, setSelectedCountry] = useState<Country>('UK');
   const [content, setContent] = useState<CountryContent>(countryContent.UK);
+    const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Initialize from localStorage
@@ -63,6 +64,26 @@ export default function Home() {
     return () => {
       window.removeEventListener('countryChange', handleCountryChange as EventListener);
     };
+  }, []);
+
+
+   useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const scrollAmount = carousel.offsetWidth;
+    let currentScroll = 0;
+    const totalScroll = carousel.scrollWidth - scrollAmount;
+
+    const interval = setInterval(() => {
+      currentScroll += scrollAmount;
+      if (currentScroll > totalScroll) {
+        currentScroll = 0;
+      }
+      carousel.scrollTo({ left: currentScroll, behavior: 'smooth' });
+    }, 3000); // Auto-swipe every 3 seconds
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -225,7 +246,10 @@ export default function Home() {
             Top products & services
           </motion.h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+       <div 
+        ref={carouselRef}
+        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 md:overflow-visible md:snap-none lg:grid-cols-4 gap-4 md:gap-8"
+      >
             {[
               {
                 title: "WEALTH MANAGEMENT",
@@ -252,52 +276,53 @@ export default function Home() {
                 alt: "Credit Cards"
               }
             ].map((product, index) => (
-              <motion.div 
-                key={index} 
-                className="bg-white flex flex-col hover:shadow-lg transition-shadow"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 * index, duration: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              >
-                {/* Text section */}
-                <div className="p-4 md:p-6">
-                  <h3 className="text-xs md:text-sm uppercase font-medium tracking-wider text-black mb-2 md:mb-4">{product.title}</h3>
-                  <p className="text-black text-xs md:text-sm">
-                    {product.description}
-                  </p>
-                </div>
-                
-                {/* Image section */}
-                <div className="h-36 md:h-48 relative mt-auto">
-                  <Image 
-                    src={product.image} 
-                    alt={product.alt} 
-                    fill 
-                    style={{objectFit: "cover"}}
-                  />
-                </div>
-                
-                {/* View Details link */}
-                <div className="p-3 md:p-4 bg-black">
-                  <Link href="#" className="text-[#d4af37] hover:underline font-medium flex items-center text-sm md:text-base">
-                    <span>View Details</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </motion.div>
+              
+             <motion.div 
+            key={index} 
+            className="bg-white flex flex-col hover:shadow-lg transition-shadow min-w-full md:min-w-0 snap-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 * index, duration: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+          >
+            {/* Text section */}
+            <div className="p-4 md:p-6">
+              <h3 className="text-xs md:text-sm uppercase font-medium tracking-wider text-black mb-2 md:mb-4">{product.title}</h3>
+              <p className="text-black text-xs md:text-sm">
+                {product.description}
+              </p>
+            </div>
+            
+            {/* Image section */}
+            <div className="h-36 md:h-48 relative mt-auto">
+              <Image 
+                src={product.image} 
+                alt={product.alt} 
+                fill 
+                style={{objectFit: "cover"}}
+              />
+            </div>
+            
+            {/* View Details link */}
+            <div className="p-3 md:p-4 bg-black">
+              <Link href="#" className="text-[#d4af37] hover:underline font-medium flex items-center text-sm md:text-base">
+                <span>View Details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </motion.div>
             ))}
           </div>
           
-          <div className="flex justify-center mt-6 md:mt-10">
-            <div className="flex space-x-2">
-              <button className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#d4af37]"></button>
-              <button className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-600 hover:bg-gray-400"></button>
-            </div>
-          </div>
+     <div className="flex justify-center mt-6 md:mt-10">
+        <div className="flex space-x-2">
+          <button className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#d4af37]"></button>
+          <button className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-600 hover:bg-gray-400"></button>
+        </div>
+      </div>
         </motion.div>
       </section>
 
