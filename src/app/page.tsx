@@ -90,7 +90,7 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white md:pt-20 pt-48">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
           <div className="relative h-full w-full">
             {/* Using the country-specific hero image */}
             <div className="absolute inset-0 bg-black/60 z-10"></div>

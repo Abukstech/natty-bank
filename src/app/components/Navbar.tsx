@@ -81,7 +81,7 @@ const Navbar = () => {
         </button>
         
         {isDropdownOpen && (
-          <div className="absolute right-10 mt-1 w-32 bg-black border border-gray-800 rounded-md shadow-lg z-50">
+          <div className="absolute right-10 mt-1 w-40 bg-black border border-gray-800 rounded-md shadow-lg z-50">
             <button 
               onClick={() => selectCountry('UK')} 
               className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
