@@ -2,16 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function CardsPage() {
+function CardsContent() {
   const searchParams = useSearchParams();
   const type = searchParams.get("type") || "credit";
   const capitalizedType = type.charAt(0).toUpperCase() + type.slice(1);
   const pageTitle = `${capitalizedType} Cards`;
 
   return (
-    <main className="min-h-screen bg-black text-white pt-40">
+    <>
       {/* Breadcrumb Navigation */}
       <div className="container mx-auto px-4 py-4 text-sm">
         <div className="flex items-center space-x-2 text-[#EBD67B]">
@@ -205,6 +206,16 @@ export default function CardsPage() {
           </Link>
         </div>
       </section>
+    </>
+  );
+}
+
+export default function CardsPage() {
+  return (
+    <main className="min-h-screen bg-black text-white pt-40">
+      <Suspense fallback={<div className="text-center text-[#EBD67B] text-xl py-20">Loading...</div>}>
+        <CardsContent />
+      </Suspense>
     </main>
   );
 }
