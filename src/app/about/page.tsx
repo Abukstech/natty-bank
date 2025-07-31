@@ -1,11 +1,12 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <main className="min-h-screen bg-black text-white pt-48 md:pt-0">
+    <main className="min-h-screen bg-black text-white pt-48 md:pt-20">
       {/* Hero Section - You'll import the image */}
       <section className="relative min-h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
@@ -26,13 +27,7 @@ export default function AboutUs() {
             </p>
             <button className="bg-[#EBD67B] hover:bg-[#c4a030] flex flex-row items-center text-black px-6 py-3 rounded-[30px] font-medium text-lg transition-colors">
               Get Started 
-              <Image
-                src="/vector.svg"
-                alt="Arrow Icon"
-                width={20}
-                height={20}
-                className="ml-2"
-              />
+              <ArrowRight className="ml-2 w-5 h-5" />
             </button>
           </div>
         </div>

@@ -168,7 +168,7 @@ export default function ContactUs() {
       </section>
       
       {/* Contact Form Section */}
-      <section className="py-16 bg-[#0c0c0c]">
+      <section id="help" className="py-16 bg-[#0c0c0c]">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg text-center mb-2 text-gray-400">ANY OTHER INQUIRY? TRY HERE:</h2>

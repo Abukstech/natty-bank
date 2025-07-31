@@ -64,9 +64,9 @@ const Footer = () => {
                 <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Explore NattyBank</h4>
                 <ul className="space-y-3 text-gray-400">
                   <li><Link href="/about" className="hover:text-[#EBD67B]">About Us</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Careers</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Investor Relations</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Blog</Link></li>
+               <li><Link href="/coming-soon?feature=career" className="hover:text-[#EBD67B]">Careers</Link></li>
+                <li><Link href="/coming-soon?feature=investor"className="hover:text-[#EBD67B]">Investor Relations</Link></li>
+                <li><Link href="/coming-soon?feature=blog"className="hover:text-[#EBD67B]">Blog</Link></li>
                 </ul>
               </div>
               
@@ -74,9 +74,9 @@ const Footer = () => {
               <div>
                 <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Card Services</h4>
                 <ul className="space-y-3 text-gray-400">
-                  <li><Link href="/cards" className="hover:text-[#EBD67B]">Credit Cards</Link></li>
-                  <li><Link href="/cards" className="hover:text-[#EBD67B]">Debit Cards</Link></li>
-                  <li><Link href="/cards" className="hover:text-[#EBD67B]">Prepaid Cards</Link></li>
+<li><Link href="/cards?type=credit" className="hover:text-[#EBD67B]">Credit Cards</Link></li>
+                  <li><Link href="/cards?type=debit" className="hover:text-[#EBD67B]">Debit Cards</Link></li>
+                  <li><Link href="/cards?type=prepaid" className="hover:text-[#EBD67B]">Prepaid Cards</Link></li>
                 </ul>
               </div>
               
@@ -84,13 +84,20 @@ const Footer = () => {
               <div>
                 <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Banking Services</h4>
                 <ul className="space-y-3 text-gray-400">
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Personal Banking</Link></li>
+                <li><Link href="/personal" className="hover:text-[#EBD67B]">Personal Banking</Link></li>
+                <li><Link href="/business" className="hover:text-[#EBD67B]">Business Banking</Link></li>
+                <li><Link href="/commercial" className="hover:text-[#EBD67B]">Commercial Banking</Link></li>
+                <li><Link href="/checking" className="hover:text-[#EBD67B]">Checking Accounts</Link></li>
+                <li><Link href="/wealth-management" className="hover:text-[#EBD67B]">Wealth Management</Link></li>
+                <li><Link href="/coming-soon?feature=Mobile-banking" className="hover:text-[#EBD67B]">Mobile Banking</Link></li>
+                <li><Link href="/coming-soon?feature=open-account"className="hover:text-[#EBD67B]">Open an Account</Link></li>
+                  {/* <li><Link href="#" className="hover:text-[#EBD67B]">Personal Banking</Link></li>
                   <li><Link href="/business" className="hover:text-[#EBD67B]">Business Banking</Link></li>
                   <li><Link href="#" className="hover:text-[#EBD67B]">Commercial Banking</Link></li>
                   <li><Link href="#" className="hover:text-[#EBD67B]">Checking Accounts</Link></li>
                   <li><Link href="#" className="hover:text-[#EBD67B]">Wealth Management</Link></li>
                   <li><Link href="#" className="hover:text-[#EBD67B]">Mobile Banking</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Open an Account</Link></li>
+                  <li><Link href="#" className="hover:text-[#EBD67B]">Open an Account</Link></li> */}
                 </ul>
               </div>
               
@@ -99,9 +106,9 @@ const Footer = () => {
                 <h4 className="text-base font-semibold mb-4 uppercase text-[#EBD67B]">Customer Support</h4>
                 <ul className="space-y-3 text-gray-400">
                   <li><Link href="/contact" className="hover:text-[#EBD67B]">Contact Us</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Privacy Policy</Link></li>
+                  <li><Link href="/coming-soon?feature=privacy-policy" className="hover:text-[#EBD67B]">Privacy Policy</Link></li>
                   <li><Link href="/fraud-report" className="hover:text-[#EBD67B]">Report Fraud</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Help & Live Chat</Link></li>
+                  <li><Link href="/contact#help" className="hover:text-[#EBD67B]">Help & Live Chat</Link></li>
                 </ul>
               </div>
             </div>
@@ -141,10 +148,10 @@ const Footer = () => {
             <div>
               <h4 className="text-base font-semibold mb-5 uppercase">Explore NattyBank</h4>
               <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-[#EBD67B]">About Us</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Careers</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Investor Relations</a></li>
-                <li><a href="#" className="hover:text-[#EBD67B]">Blog</a></li>
+                <li><Link href="/about" className="hover:text-[#EBD67B]">About Us</Link></li>
+                <li><Link href="/coming-soon?feature=career" className="hover:text-[#EBD67B]">Careers</Link></li>
+                <li><Link href="/coming-soon?feature=investor"className="hover:text-[#EBD67B]">Investor Relations</Link></li>
+                <li><Link href="/coming-soon?feature=blog"className="hover:text-[#EBD67B]">Blog</Link></li>
               </ul>
             </div>
             
@@ -157,8 +164,8 @@ const Footer = () => {
                 <li><Link href="/commercial" className="hover:text-[#EBD67B]">Commercial Banking</Link></li>
                 <li><Link href="/checking" className="hover:text-[#EBD67B]">Checking Accounts</Link></li>
                 <li><Link href="/wealth-management" className="hover:text-[#EBD67B]">Wealth Management</Link></li>
-                <li><Link href="#" className="hover:text-[#EBD67B]">Mobile Banking</Link></li>
-                <li><Link href="#" className="hover:text-[#EBD67B]">Open an Account</Link></li>
+                <li><Link href="/coming-soon?feature=Mobile-banking" className="hover:text-[#EBD67B]">Mobile Banking</Link></li>
+                <li><Link href="/coming-soon?feature=open-account"className="hover:text-[#EBD67B]">Open an Account</Link></li>
               </ul>
             </div>
             
@@ -167,9 +174,9 @@ const Footer = () => {
               <div>
                 <h4 className="text-base font-semibold mb-5 uppercase">Card Services</h4>
                 <ul className="space-y-3 text-gray-400">
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Credit Cards</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Debit Cards</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Prepaid Cards</Link></li>
+                  <li><Link href="/cards?type=credit" className="hover:text-[#EBD67B]">Credit Cards</Link></li>
+                  <li><Link href="/cards?type=debit" className="hover:text-[#EBD67B]">Debit Cards</Link></li>
+                  <li><Link href="/cards?type=prepaid" className="hover:text-[#EBD67B]">Prepaid Cards</Link></li>
                 </ul>
               </div>
               
@@ -177,9 +184,9 @@ const Footer = () => {
                 <h4 className="text-base font-semibold mb-5 uppercase">Customer Support</h4>
                 <ul className="space-y-3 text-gray-400">
                   <li><Link href="/contact" className="hover:text-[#EBD67B]">Contact Us</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Privacy Policy</Link></li>
+                  <li><Link href="/coming-soon?feature=privacy-policy" className="hover:text-[#EBD67B]">Privacy Policy</Link></li>
                   <li><Link href="/fraud-report" className="hover:text-[#EBD67B]">Report Fraud</Link></li>
-                  <li><Link href="#" className="hover:text-[#EBD67B]">Help & Live Chat</Link></li>
+                  <li><Link href="/contact#help" className="hover:text-[#EBD67B]">Help & Live Chat</Link></li>
                 </ul>
               </div>
 
@@ -193,16 +200,33 @@ const Footer = () => {
           </div>
         
           {/* App Store and Google Play - Desktop */}
+
+          {/* <div className="flex flex-col space-y-3 mb-8">
+              <a href="#" className="flex items-center justify-center bg-black border border-gray-700 rounded-2xl  px-4 py-2 hover:border-[#EBD67B] transition-colors">
+              <img src="/applestore.png" alt="Natty Bank" className="h-6 w-6 mr-2" />
+                <div>
+        
+                  <div className="text-base font-semibold">App Store</div>
+                </div>
+              </a>
+              <a href="#" className="flex items-center justify-center bg-[#EBD67B] text-black rounded-2xl px-4 py-2 hover:bg-[#c4a030] transition-colors">
+ <img src="/playstore.png" alt="Natty Bank" className="h-6 w-6 mr-2" />
+                <div>
+           
+                  <div className="text-base font-semibold">Google Play</div>
+                </div>
+              </a>
+            </div> */}
           <div className="hidden md:flex flex-wrap gap-4 mb-8">
             <a href="#" className="flex items-center bg-black border border-gray-700 rounded-lg px-4 py-2 hover:border-[#EBD67B] transition-colors">
-              <AppleIcon className="h-6 w-6 mr-2" />
+              <img src="/applestore.png" alt="Natty Bank" className="h-6 w-6 mr-2" />
               <div>
                 <div className="text-xs">Download on the</div>
                 <div className="text-base font-semibold">App Store</div>
               </div>
             </a>
             <a href="#" className="flex items-center bg-black border border-gray-700 rounded-lg px-4 py-2 hover:border-[#EBD67B] transition-colors">
-              <PlayCircle className="h-6 w-6 mr-2" />
+            <img src="/playstore.png" alt="Natty Bank" className="h-6 w-6 mr-2" />
               <div>
                 <div className="text-xs">GET IT ON</div>
                 <div className="text-base font-semibold">Google Play</div>

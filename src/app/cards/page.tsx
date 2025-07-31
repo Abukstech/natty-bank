@@ -2,8 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
-export default function CreditCards() {
+export default function CardsPage() {
+  const searchParams = useSearchParams();
+  const type = searchParams.get("type") || "credit";
+  const capitalizedType = type.charAt(0).toUpperCase() + type.slice(1);
+  const pageTitle = `${capitalizedType} Cards`;
+
   return (
     <main className="min-h-screen bg-black text-white pt-40">
       {/* Breadcrumb Navigation */}
@@ -11,7 +17,7 @@ export default function CreditCards() {
         <div className="flex items-center space-x-2 text-[#EBD67B]">
           <Link href="/" className="hover:underline">Home</Link>
           <span>/</span>
-          <span>Credit Cards</span>
+          <span>{pageTitle}</span>
         </div>
       </div>
 
@@ -20,7 +26,7 @@ export default function CreditCards() {
         <div className="container mx-auto ">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8 px-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-[#EBD67B] mb-6">Credit Cards</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-[#EBD67B] mb-6">{pageTitle}</h1>
               <p className="text-lg mb-6">
                 The Rio Combo added her list to do so, because there was thousands of that Combo, and Question Marks and Exclamation Marks ran down the street.
               </p>
@@ -54,7 +60,7 @@ export default function CreditCards() {
             </div>
             <p className="text-xl text-[#EBD67B] px-8 md:text-2xl leading-relaxed mb-8">
               Whether you're building credit, earning rewards, or managing 
-              business expenses, <span className="text-[#EBD67B] font-semibold">NattyBank's credit cards</span> are designed 
+              business expenses, <span className="text-[#EBD67B] font-semibold">NattyBank's {type} cards</span> are designed 
               to give you flexibility, security, and value. Choose the card that fits 
               your lifestyle — and apply in minutes.
             </p>

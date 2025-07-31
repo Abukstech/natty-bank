@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { UKFlag, NigeriaFlag, GhanaFlag } from './Flags';
 import { Search, Menu } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 // Define country type and content data
 type Country = 'UK' | 'Nigeria' | 'Ghana';
@@ -13,6 +14,7 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<Country>('UK');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter()
 
   // Function to toggle dropdown
   const toggleDropdown = () => {
@@ -121,7 +123,7 @@ const Navbar = () => {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <Link href="/transfers" className="text-[#EBD67B] transition-colors">
+          <Link href="/coming-soon?feature=Transfers" className="text-[#EBD67B] transition-colors">
             Transfers and payments
           </Link>
         </div>
@@ -207,7 +209,7 @@ const Navbar = () => {
           </div>
           
           {/* Online Banking button */}
-          <button className="border border-[#d4af37] text-[#EBD67B] hover:bg-[#d4af37] hover:text-black px-4 py-2 rounded-sm font-medium transition-colors items-center flex">
+          <button onClick={()=> {router.push("/coming-soon?feature=Online-Banking")}} className="border border-[#d4af37] text-[#EBD67B] hover:bg-[#d4af37] hover:text-black px-4 py-2 rounded-sm font-medium transition-colors items-center flex">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
@@ -297,7 +299,7 @@ const Navbar = () => {
                 <Link href="/commercial" className="text-[#EBD67B] py-2 block transition-colors">
                   Corporate clients
                 </Link>
-                <Link href="/transfers" className="text-[#EBD67B] py-2 block transition-colors">
+                <Link href="/coming-soon?feature=Transfers" className="text-[#EBD67B] py-2 block transition-colors">
                   Transfers and payments
                 </Link>
               </div>
@@ -310,7 +312,7 @@ const Navbar = () => {
       {/* Online Banking button for mobile - right after the navbar */}
       <div className="md:hidden w-full bg-black ">
         <div className="container mx-auto px-4 py-4">
-          <button className="w-full flex items-center justify-center bg-transparent border border-[#EBD67B] rounded-sm py-3 px-4">
+          <button onClick={()=> {router.push("/coming-soon?feature=Online-Banking")}} className="w-full flex items-center justify-center bg-transparent border border-[#EBD67B] rounded-sm py-3 px-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#EBD67B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>

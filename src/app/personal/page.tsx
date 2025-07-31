@@ -31,16 +31,14 @@ export default function PersonalBanking() {
                 Open Account
               </Link>
             </div>
-            <div className="md:w-1/2">
-              <div className="relative h-[400px] w-full">
-                <Image 
-                  src="/personal.svg" 
-                  alt="Person using mobile banking" 
-                 width={1200}
-                 height={600}
-                  className="object-cover rounded-lg"
-                />
-              </div>
+            <div className="md:w-2/3">
+              <Image 
+                src="/personal.svg" 
+                alt="Business Banking" 
+                width={1200} 
+                height={900}
+                className=" w-full h-auto"
+              />
             </div>
           </div>
         </div>
