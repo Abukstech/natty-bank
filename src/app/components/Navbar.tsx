@@ -72,7 +72,7 @@ const Navbar = () => {
           onClick={toggleDropdown}
           className="text-end w-full mr-10 text-[#EBD67B] text-[11px] flex justify-end items-center"
         >
-          {selectedCountry === 'UK' ? 'United kingdom' : selectedCountry}
+          {selectedCountry === 'Nigeria' ? 'Nigeria' : selectedCountry}
           <span className="ml-1 inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -82,6 +82,13 @@ const Navbar = () => {
         
         {isDropdownOpen && (
           <div className="absolute right-10 mt-1 w-40 bg-black border border-gray-800 rounded-md shadow-lg z-50">
+              <button 
+              onClick={() => selectCountry('Nigeria')} 
+              className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
+            >
+              {/* <span className="mr-2"><NigeriaFlag /></span> */}
+              <span>Nigeria</span>
+            </button>
             <button 
               onClick={() => selectCountry('UK')} 
               className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
@@ -89,13 +96,7 @@ const Navbar = () => {
               {/* <span className="mr-2"><UKFlag /></span> */}
               <span>United Kingdom</span>
             </button>
-            <button 
-              onClick={() => selectCountry('Nigeria')} 
-              className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
-            >
-              {/* <span className="mr-2"><NigeriaFlag /></span> */}
-              <span>Nigeria</span>
-            </button>
+          
             <button 
               onClick={() => selectCountry('Ghana')} 
               className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"

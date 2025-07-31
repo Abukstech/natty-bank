@@ -62,7 +62,7 @@ const Footer = () => {
               {/* Explore NattyBank */}
               <div>
                 <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Explore NattyBank</h4>
-                <ul className="space-y-3 text-gray-400">
+                <ul className="space-y-3 text-gray-400 text-[14px]">
                   <li><Link href="/about" className="hover:text-[#EBD67B]">About Us</Link></li>
                <li><Link href="/coming-soon?feature=career" className="hover:text-[#EBD67B]">Careers</Link></li>
                 <li><Link href="/coming-soon?feature=investor"className="hover:text-[#EBD67B]">Investor Relations</Link></li>
@@ -73,7 +73,7 @@ const Footer = () => {
               {/* Card Services */}
               <div>
                 <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Card Services</h4>
-                <ul className="space-y-3 text-gray-400">
+                <ul className="space-y-3 text-gray-400 text-[14px]">
 <li><Link href="/cards?type=credit" className="hover:text-[#EBD67B]">Credit Cards</Link></li>
                   <li><Link href="/cards?type=debit" className="hover:text-[#EBD67B]">Debit Cards</Link></li>
                   <li><Link href="/cards?type=prepaid" className="hover:text-[#EBD67B]">Prepaid Cards</Link></li>
@@ -83,7 +83,7 @@ const Footer = () => {
               {/* Banking Services */}
               <div>
                 <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Banking Services</h4>
-                <ul className="space-y-3 text-gray-400">
+                <ul className="space-y-3 text-gray-400 text-[14px]">
                 <li><Link href="/personal" className="hover:text-[#EBD67B]">Personal Banking</Link></li>
                 <li><Link href="/business" className="hover:text-[#EBD67B]">Business Banking</Link></li>
                 <li><Link href="/commercial" className="hover:text-[#EBD67B]">Commercial Banking</Link></li>
@@ -104,7 +104,7 @@ const Footer = () => {
               {/* Customer Support */}
               <div>
                 <h4 className="text-sm font-semibold mb-4 uppercase text-[#EBD67B]">Customer Support</h4>
-                <ul className="space-y-3 text-gray-400">
+                <ul className="space-y-3 text-gray-400 text-[14px]">
                   <li><Link href="/contact" className="hover:text-[#EBD67B]">Contact Us</Link></li>
                   <li><Link href="/coming-soon?feature=privacy-policy" className="hover:text-[#EBD67B]">Privacy Policy</Link></li>
                   <li><Link href="/fraud-report" className="hover:text-[#EBD67B]">Report Fraud</Link></li>
