@@ -38,8 +38,8 @@ const countryContent: Record<Country, CountryContent> = {
 };
 
 export default function Home() {
-  const [, setSelectedCountry] = useState<Country>('UK');
-  const [content, setContent] = useState<CountryContent>(countryContent.UK);
+  const [, setSelectedCountry] = useState<Country>('Nigeria');
+  const [content, setContent] = useState<CountryContent>(countryContent.Nigeria);
     const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
